@@ -7,7 +7,9 @@
       @focusin = "startEditing"
       @focusout = "finishEditing"
   />
-  <button type="submit" class="add-button" v-if="isEditing || bodyExists">
+  <button type="submit"
+          class="add-button"
+          v-if="isEditing || bodyExists">
     Add
   </button>
 </form>
@@ -49,8 +51,8 @@ export default {
     finishEditing: function(){
       this.isEditing = false
     },
-    addCardTodoList:function(){
-      this.$store.dispatch('addCardToList',{body:this.body,listInbex: this.listIndex })
+    addCardToList: function() {
+      this.$store.dispatch('addCardToList', { body: this.body, listIndex: this.listIndex })
       this.body = ''
     }
   }
